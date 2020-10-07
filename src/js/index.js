@@ -6,4 +6,6 @@ import '../scss/main.scss';
 
 /* place your code below */
 
-console.log('HELLO 🚀')
+const textArea = document.querySelector('.main__text');
+const loadBTN = document.querySelector('.button__load');
+const saveBTN = document.querySelector('.button__save');
