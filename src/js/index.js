@@ -10,16 +10,25 @@ const textArea = document.querySelector('.textarea--js');
 const loadBTN = document.querySelector('.load--js');
 const saveBTN = document.querySelector('.save--js');
 
+const currentValue = localStorage.getItem('entry');
 
-const entry = localStorage.getItem('entry');
-let result = "";
-if (entry) {
-  result = entry;
-};
+if (currentValue) {
+  document.querySelector('.info--js').innerHTML = '!';
+}
 
-textArea.value = result;
-
-saveBTN.addEventListener("click", () => {
+saveBTN.addEventListener("click", (e) => {
+  e.preventDefault(); //zakazuje odświeżania przez formularz po kliknięciu "save"
   localStorage.setItem('entry', textArea.value);
+  if (textArea.value) {
+    document.querySelector('.info--js').innerHTML = '!';
+  } else {
+    document.querySelector('.info--js').innerHTML = '';
+  }
   textArea.value = "";
+})
+
+loadBTN.addEventListener('click', (e) => {
+  e.preventDefault(); //zakazuje odświeżania przez formularz po kliknięciu "load"
+  textArea.value = localStorage.getItem('entry');
+
 })
