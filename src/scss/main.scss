@@ -1,10 +1,19 @@
 @import "~normalize.css";
 @import url('https://fonts.googleapis.com/css2?family=Teko:wght@400;600&display=swap');
-@import "_variables";
-@import "modules/hello.scss";
+
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
 
 body {
-  background: $wtf;
+  background: #79787a;
   color: #fff;
   display: flex;
   align-items: center;
@@ -13,44 +22,54 @@ body {
   font-family: 'Teko', sans-serif;
 }
 
-.title {
-  color: black;
+.editor {
+  width: 100%;
+  max-width: 736px;
+
+  &__title {
+    font-size: 44px;
+    margin: 0 0 30px 0;
+    color: black;
+  }
 }
 
-.mainpage {
-  max-width: 600px;
-  text-align: center;
-}
+.form {
+  &__textarea {
+    width: 100%;
+    min-height: 240px;
+    padding: 15px;
+    font-size: 20px;
+    border: 2px solid black;
+    border-radius: 20px;
+    background-color: #ddd;
 
-.main__text {
-  width: 600px;
-  height: 300px;
-  padding: 15px;
-  font-size: 20px;
-  border: 2px solid black;
-  border-radius: 20px;
-  background-color: #ddd;
-
-}
-
-.button {
-  width: 100px;
-  line-height: 50px;
-  font-size: 26px;
-  margin-top: 30px;
-  margin-right: 30px;
-  border: 2px solid black;
-  border-radius: 10px;
-
-  &:hover {
-    cursor: pointer;
   }
 
-  &__load {
-    background-color: rgb(73, 211, 38);
+  &__buttons {
+    width: 100%;
+    margin: 16px 0 0 0;
+    display: flex;
+    justify-content: flex-end;
   }
 
-  &__save {
-    background-color: rgb(13, 72, 107);
+  &__button {
+    padding: 10px 30px;
+    line-height: 30px;
+    font-size: 26px;
+    border: 2px solid black;
+    border-radius: 10px;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &--load {
+      background-color: rgb(73, 211, 38);
+    }
+
+    &--save {
+      margin-left: 30px;
+      background-color: rgb(13, 72, 107);
+    }
   }
 }

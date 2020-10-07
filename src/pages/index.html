@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>WTF: Webpack starter kit</title>
+  <title>Simple editor</title>
   <meta name="description" content="Your project description" />
   <!-- Title -->
   <meta property="og:title" content="" />
@@ -68,12 +68,16 @@
 </head>
 
 <body>
-  <main class="mainpage">
-    <h1 class="title">My editor</h1>
-    <textarea class="main__text" name="main__text" id="main__text" cols="30" rows="10"
-      placeholder="Lorem ipsum dolor sit amet..."></textarea>
-    <button class="button button__load">Load</button>
-    <button class="button button__save">Save</button>
+  <main class="editor">
+    <h1 class="editor__title">My editor</h1>
+    <form action="" class="form">
+      <textarea aria-label="Lorum ipsum dolor sit amet..." class="form__textarea textarea--js" name="main__text"
+        id="main__text" placeholder="Lorum ipsum dolor sit amet..."></textarea>
+      <div class="form__buttons">
+        <button class="form__button form__button--load load--js">Load</button>
+        <button class="form__button form__button--save save--js">Save</button>
+      </div>
+    </form>
   </main>
 </body>
 

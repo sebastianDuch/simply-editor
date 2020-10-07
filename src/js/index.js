@@ -6,6 +6,20 @@ import '../scss/main.scss';
 
 /* place your code below */
 
-const textArea = document.querySelector('.main__text');
-const loadBTN = document.querySelector('.button__load');
-const saveBTN = document.querySelector('.button__save');
+const textArea = document.querySelector('.textarea--js');
+const loadBTN = document.querySelector('.load--js');
+const saveBTN = document.querySelector('.save--js');
+
+
+const entry = localStorage.getItem('entry');
+let result = "";
+if (entry) {
+  result = entry;
+};
+
+textArea.value = result;
+
+saveBTN.addEventListener("click", () => {
+  localStorage.setItem('entry', textArea.value);
+  textArea.value = "";
+})
